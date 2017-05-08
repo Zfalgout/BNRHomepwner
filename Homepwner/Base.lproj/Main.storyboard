@@ -17,9 +17,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="BiO-EJ-S9L">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ML7-uw-an0">
+                                    <rect key="frame" x="8" y="15" width="175.5" height="30"/>
+                                    <state key="normal" title="Edit"/>
+                                    <connections>
+                                        <action selector="toggleEditingMode:" destination="wJA-0T-udO" eventType="touchUpInside" id="CQX-kz-pNz"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoX-fu-YZJ">
+                                    <rect key="frame" x="191.5" y="15" width="175.5" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="Add"/>
+                                    <connections>
+                                        <action selector="addNewItem:" destination="wJA-0T-udO" eventType="touchUpInside" id="uwv-KK-Eq5"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="zoX-fu-YZJ" firstAttribute="leading" secondItem="ML7-uw-an0" secondAttribute="trailing" constant="8" id="8JT-3G-W6N"/>
+                                <constraint firstItem="ML7-uw-an0" firstAttribute="leading" secondItem="BiO-EJ-S9L" secondAttribute="leading" constant="8" id="Z1L-Hg-HSb"/>
+                                <constraint firstAttribute="trailing" secondItem="zoX-fu-YZJ" secondAttribute="trailing" constant="8" id="cdo-hY-pdN"/>
+                                <constraint firstItem="ML7-uw-an0" firstAttribute="centerY" secondItem="BiO-EJ-S9L" secondAttribute="centerY" id="gzA-fI-Ysj"/>
+                                <constraint firstItem="zoX-fu-YZJ" firstAttribute="centerY" secondItem="BiO-EJ-S9L" secondAttribute="centerY" id="nwe-hK-I48"/>
+                                <constraint firstItem="zoX-fu-YZJ" firstAttribute="width" secondItem="ML7-uw-an0" secondAttribute="width" id="zPb-yw-Qyb"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="vCs-14-kH8" detailTextLabel="5DB-fW-AKX" style="IBUITableViewCellStyleValue1" id="sB2-uf-fiU">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sB2-uf-fiU" id="qox-0J-QJc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -50,6 +80,11 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bb7-tM-c6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="C3a-mK-jOn">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="163" y="164"/>
         </scene>
