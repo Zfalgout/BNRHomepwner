@@ -160,11 +160,21 @@ class ItemsViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath){
         
-        if destinationIndexPath.row >= itemStore.allItems.count{
+        if destinationIndexPath.row < itemStore.allItems.count{
             //Update the model
+            print("\(destinationIndexPath.row)  and    \(itemStore.allItems.count)")
             itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
-        } else {
-            return
+        } else if destinationIndexPath.row >= itemStore.allItems.count{
+            print("\(destinationIndexPath.row)  and    \(itemStore.allItems.count)   and \(sourceIndexPath.row)")
+            
+            for item in itemStore.allItems{
+                print(item.name)
+            }
+            
+            //tableView.cellForRow(at: sourceIndexPath)
+            //tableView.deselectRow(at: sourceIndexPath, animated: true)
+            //tableView.endUpdates()
+            tableView.reloadData()
         }
     }
     
