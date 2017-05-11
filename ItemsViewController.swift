@@ -200,4 +200,10 @@ class ItemsViewController: UITableViewController{
         }
     }
     
+    //Chapter 14
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 }

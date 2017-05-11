@@ -40,4 +40,19 @@ class DetailViewController: UIViewController{
         valueTextField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         serialTextField.text = item.serialNumber
     }
+    
+    //Chapter 14 code
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        //"Save" changes to the item.
+        item.name = nameTextField.text ?? ""
+        item.serialNumber = serialTextField.text
+        
+        if let valueText = valueTextField.text, let value = numberFormatter.number(from: valueText){
+            item.valueInDollars = value.intValue
+        } else {
+            item.valueInDollars = 0
+        }
+    }
 }

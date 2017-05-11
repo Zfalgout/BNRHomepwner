@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wJA-0T-udO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5T1-bA-HAA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -98,6 +98,7 @@
                             <outlet property="delegate" destination="wJA-0T-udO" id="wv3-e4-ol4"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="7xV-IP-GPP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bb7-tM-c6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="C3a-mK-jOn">
@@ -106,7 +107,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="163" y="164"/>
+            <point key="canvasLocation" x="-71" y="509"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="PrK-SJ-don">
@@ -121,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o0y-DY-OjQ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="631"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="587"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wdr-hj-2jx">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -184,7 +185,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLz-Bf-L06">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="517"/>
+                                        <rect key="frame" x="0.0" y="114" width="375" height="473"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -198,9 +199,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="o0y-DY-OjQ" firstAttribute="top" secondItem="N7l-Lx-oMx" secondAttribute="bottom" constant="8" id="474-XN-eHD"/>
                             <constraint firstItem="o0y-DY-OjQ" firstAttribute="leading" secondItem="hQD-NV-oYa" secondAttribute="leadingMargin" constant="-16" id="Jge-za-Y2F"/>
                             <constraint firstItem="VVr-MD-Trq" firstAttribute="top" secondItem="o0y-DY-OjQ" secondAttribute="bottom" constant="8" id="lGi-1X-KGE"/>
+                            <constraint firstItem="o0y-DY-OjQ" firstAttribute="top" secondItem="N7l-Lx-oMx" secondAttribute="bottom" constant="8" id="pTI-uV-RqK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="o0y-DY-OjQ" secondAttribute="trailing" constant="-16" id="uZS-NX-TDR"/>
                         </constraints>
                     </view>
@@ -213,7 +214,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIM-Eo-3YF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866.39999999999998" y="167.76611694152925"/>
+            <point key="canvasLocation" x="799" y="509"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fPg-mr-7a5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5T1-bA-HAA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V9G-ks-GNd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wJA-0T-udO" kind="relationship" relationship="rootViewController" id="RMS-WJ-EaH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o51-8z-yX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="-257"/>
         </scene>
     </scenes>
 </document>
