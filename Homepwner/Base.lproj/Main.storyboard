@@ -163,7 +163,7 @@
                                                 <gestureRecognizers/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="S6a-L4-SkW" id="ZmH-ll-0AW"/>
                                                 </connections>
