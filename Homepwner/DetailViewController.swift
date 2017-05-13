@@ -8,12 +8,18 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate{
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
     
     @IBOutlet weak var nameTextField: ResponderSubclass!
     @IBOutlet weak var dateCreatedField: UILabel!
     @IBOutlet weak var valueTextField: ResponderSubclass!
     @IBOutlet weak var serialTextField: ResponderSubclass!
+    
+    //Chapter 15 variables and functions associated with UI
+    @IBOutlet var imageView: UIImageView!
+    
+    var imageStore: ImageStore!
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
 //        if(nameTextField.isFirstResponder){
@@ -60,6 +66,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         dateCreatedField.text = dateFormatter.string(from: item.dateCreated)
         valueTextField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         serialTextField.text = item.serialNumber
+        
+        //Get the item key
+        let key = item.itemKey
+        
+        //If there is an associated image with the item display it on the image view
+        let imageToDisplay = imageStore.image(forKey: key)
+        imageView.image = imageToDisplay
     }
     
     //Chapter 14 code
@@ -82,5 +95,46 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    //Chapter 15 functions
+    @IBAction func takePicture(_ sender: UIBarButtonItem) {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        //imagePicker.setEditing(true, animated: true)
+        //If the device has a camera, take a picture; otherwise,
+        //just pick a photo from the photo library.
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            imagePicker.sourceType = .camera
+        } else {
+            imagePicker.sourceType = .photoLibrary
+        }
+        
+        imagePicker.delegate = self
+        
+        //imagePicker.setEditing(true, animated: true)
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]){
+        //picker.setEditing(true, animated: true)
+        
+        //Get picked image from info dictionary
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        //picker.allowsEditing = true
+        print("\(picker.allowsEditing)")
+        
+        //Store the image in the ImageStore for the item's key
+        imageStore.setImage(image, forKey: item.itemKey)
+        
+        //Put that image on the screen in the image view
+        imageView.image = image
+        
+        //Take image picker off the screen - you must call this dismiss method
+        dismiss(animated: true, completion: nil)
     }
 }
