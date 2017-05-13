@@ -16,6 +16,18 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var serialTextField: ResponderSubclass!
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+//        if(nameTextField.isFirstResponder){
+//            _ = nameTextField.resignFirstResponder()
+//        }else if(serialTextField.isFirstResponder){
+//           _ = serialTextField.resignFirstResponder()
+//        }else if(valueTextField.isFirstResponder){
+//            _ = valueTextField.resignFirstResponder()
+//        }
+        
+        //view.endEditing should call resignFirstResponder on the view that is a first responder.
+        //All of my views are subclasses of UITextField and I've checked that each is the first responder
+        //when clicked on.  For some reason this isn't firing off the overridden functions in the class
+        //ResponderSubclass
         view.endEditing(true)
         print("backgroundTapped fired!")
     }
