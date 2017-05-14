@@ -56,7 +56,7 @@
 		762171901EBDF2F300ADB8B4 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ../Item.swift; sourceTree = "<group>"; };
 		762171921EBDF74600ADB8B4 /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemStore.swift; path = ../ItemStore.swift; sourceTree = "<group>"; };
 		764D442D1EC5D00A00B73935 /* ResponderSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponderSubclass.swift; sourceTree = "<group>"; };
-		764D442F1EC7658B00B73935 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		764D442F1EC7658B00B73935 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageStore.swift; path = ../ImageStore.swift; sourceTree = "<group>"; };
 		76D5E7A71EC1D908005322EA /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCell.swift; path = ../ItemCell.swift; sourceTree = "<group>"; };
 		76D5E7A91EC380E2005322EA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +89,6 @@
 		762171541EBDF05F00ADB8B4 = {
 			isa = PBXGroup;
 			children = (
-				764D442F1EC7658B00B73935 /* ImageStore.swift */,
 				7621715F1EBDF05F00ADB8B4 /* Homepwner */,
 				762171741EBDF05F00ADB8B4 /* HomepwnerTests */,
 				7621717F1EBDF05F00ADB8B4 /* HomepwnerUITests */,
@@ -110,6 +109,7 @@
 		7621715F1EBDF05F00ADB8B4 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				764D442F1EC7658B00B73935 /* ImageStore.swift */,
 				76D5E7A71EC1D908005322EA /* ItemCell.swift */,
 				762171921EBDF74600ADB8B4 /* ItemStore.swift */,
 				762171901EBDF2F300ADB8B4 /* Item.swift */,

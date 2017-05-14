@@ -42,4 +42,17 @@ class ItemStore{
         //Insert item in array at new location
         allItems.insert(movedItem, at: toIndex)    
     }
+    
+    //Chapter 16
+    let itemArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("items.archive")
+    }()
+    
+    func saveChanges() -> Bool{
+        print("Saving items to: \(itemArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(allItems, toFile: itemArchiveURL.path)
+    }
+    
 }
